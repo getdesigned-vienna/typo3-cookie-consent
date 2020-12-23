@@ -1,0 +1,17 @@
+<html
+        xmlns="http://www.w3.org/1999/xhtml" lang="en"
+        xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+        data-namespace-typo3-fluid="true"
+>
+
+<f:for as="script" each="{scripts}">
+
+    <f:if condition="{script.cookies.0} && {script.script} != ''">
+
+        <script data-gdcc-src="{script.script}" data-gdcc-selector="gdcc-optin-{script.cookies.0.identifier}" type="text/plain"></script>
+
+    </f:if>
+
+</f:for>
+
+</html>

@@ -1,0 +1,21 @@
+plugin {
+
+    tx_gdcookieconsent {
+
+        settings {
+            # cat=plugin.gd_cookieconsent/basic; type=string; label=Storage folder for cookie consent settings
+            storagePid =
+        }
+
+        view {
+            # cat=plugin.gd_cookieconsent/file; type=string; label=Path to template root (FE)
+            templateRootPath = EXT:gd_cookieconsent/Resources/Private/Templates/
+            # cat=plugin.gd_cookieconsent/file; type=string; label=Path to template partials (FE)
+            partialRootPath = EXT:gd_cookieconsent/Resources/Private/Partials/
+            # cat=plugin.gd_cookieconsent/file; type=string; label=Path to template layouts (FE)
+            layoutRootPath = EXT:gd_cookieconsent/Resources/Private/Layouts/
+        }
+
+    }
+
+}

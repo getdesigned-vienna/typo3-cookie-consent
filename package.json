@@ -1,0 +1,22 @@
+{
+  "name": "gd_cookieconsent",
+  "title": "Getdesigned Cookie consent",
+  "description": "Easy configurable and customizable cookie consent for TYPO3. Takes advantage of GDCC JS library",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Getdesigned GmbH"
+  },
+  "private": false,
+  "dependencies": {
+    "@getdesigned-vienna/cookie-consent": "^1.1.3"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-load-plugins": "~2.0.1",
+    "gulp-rename": "~1.4.0",
+    "gulp-touch-fd": "~2.0.0",
+    "gulp-clean-css": "~4.2.0",
+    "gulp-sass": "~4.0.2"
+  }
+}

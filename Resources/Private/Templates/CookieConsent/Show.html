@@ -1,0 +1,137 @@
+<html
+    xmlns="http://www.w3.org/1999/xhtml" lang="en"
+    xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<div id="gdcc-wrapper">
+
+    <div id="cookieConsent" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>
+                        Diese Website verwendet Cookies, um Ihnen den bestmöglichen Service zu bieten. Sie können Ihre <a href="#" class="toggle-manager" style="text-decoration: underline">Cookie-Einstellungen</a> jederzeit ändern oder mit "Akzeptieren" bestätigen.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary gdcc-save-consent" data-dismiss="modal" data-gdcc-select="*">
+                        Akzeptieren
+                    </button>
+                    <button type="button" class="btn btn-secondary gdcc-save-consent" data-dismiss="modal" data-gdcc-select="-">
+                        Ablehnen
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookieManager">
+
+        <div id="cookieManagerCard" class="card">
+
+            <div class="card-header">
+                Cookie-Einstellungen
+
+                <button
+                    data-dismiss="alert"
+                    data-target="#cookieManagerCard"
+                    type="button"
+                    class="close"
+                    aria-label="Schließen"
+                >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="card-body">
+
+                <p class="card-text">
+                    Dieses Tool hilft Ihnen bei der Auswahl und Deaktivierung verschiedener Tags / Tracker / Analysetools, die auf dieser Website verwendet werden.
+                </p>
+
+                <form>
+
+                    <f:for as="cookieCategory" each="{cookieCategories}">
+                        <fieldset>
+                            <legend>
+                                {cookieCategory.name}
+
+                                <f:if condition="{cookieCategory.description} != ''">
+                                    <a
+                                            data-toggle="popover"
+                                            title="{cookieCategory.name}"
+                                            data-content="{cookieCategory.description}"
+                                            data-placement="right"
+                                            data-trigger="focus"
+                                            role="button"
+                                            tabindex="0"
+                                    >
+                                        <i class="fas fa-question-circle"></i>
+                                    </a>
+                                </f:if>
+
+                            </legend>
+
+                            <f:if condition="{cookieCategory.forced} == 1">
+                                <f:then>
+                                    <f:variable name="additionalAttributes" value="checked disabled" />
+                                </f:then>
+                                <f:else>
+                                    <f:variable name="additionalAttributes" value="" />
+                                </f:else>
+                            </f:if>
+
+                            <f:for as="script" each="{cookieCategory.scripts}">
+                                <f:for as="cookie" each="{script.cookies}">
+
+                                    <input type="checkbox" id="{cookie.identifier}" {additionalAttributes} />
+                                    <label for="{cookie.identifier}">{cookie.name}</label>
+
+                                    <f:if condition="{cookie.description} != ''">
+                                        <a
+                                                data-toggle="popover"
+                                                title="{cookie.name}"
+                                                data-content="{cookie.description}"
+                                                data-placement="right"
+                                                data-trigger="focus"
+                                                role="button"
+                                                tabindex="0"
+                                        >
+                                            <i class="fas fa-question-circle"></i>
+                                        </a>
+                                    </f:if>
+
+                                    <br />
+
+                                </f:for>
+                            </f:for>
+
+                        </fieldset>
+
+                    </f:for>
+
+                    <input
+                        type="submit"
+                        class="btn btn-primary"
+                        value="Einstellungen speichern"
+                        data-dismiss="alert"
+                        data-target="#cookieManagerCard"
+                        onclick="$('#cookieConsent').modal('hide')"
+                    />
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <span class="fa-stack toggle-manager">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-fingerprint fa-stack-1x fa-inverse"></i>
+        </span>
+
+    </div>
+
+</div>
+
+</html>

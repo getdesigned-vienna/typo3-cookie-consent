@@ -1,0 +1,15 @@
+page {
+    includeJS {
+
+        jquery = EXT:gd_cookieconsent/Resources/Public/Scripts/jquery.slim.min.js
+        fg_cookie = EXT:gd_cookieconsent/Resources/Public/Scripts/fg-cookie.js
+        gdcc = EXT:gd_cookieconsent/Resources/Public/Scripts/getdesigned-cookie-consent.js
+        gd_cookieconsent = EXT:gd_cookieconsent/Resources/Public/Scripts/gd-cookieconsent.js
+
+    }
+
+    includeCSS {
+        gd_cookieconsent = EXT:gd_cookieconsent/Resources/Public/Styles/cookieconsent.min.css
+    }
+
+}

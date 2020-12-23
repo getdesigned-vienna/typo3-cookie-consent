@@ -1,0 +1,57 @@
+plugin.tx_gdcookieconsent {
+
+    settings {
+        storagePid = {$plugin.tx_gdcookieconsent.settings.storagePid}
+    }
+
+    view {
+        templateRootPaths {
+            0 = EXT:news/Resources/Private/Templates/
+            1 = {$plugin.tx_gdcookieconsent.view.templateRootPath}
+        }
+
+        partialRootPaths {
+            0 = EXT:news/Resources/Private/Partials/
+            1 = {$plugin.tx_gdcookieconsent.view.partialRootPath}
+        }
+
+        layoutRootPaths {
+            0 = EXT:news/Resources/Private/Layouts/
+            1 = {$plugin.tx_gdcookieconsent.view.layoutRootPath}
+        }
+
+    }
+}
+
+lib.cookieConsent = USER
+lib.cookieConsent {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = GdCookieconsent
+    pluginName = Cookiehandling
+    vendorName = GD
+
+    switchableControllerActions {
+        CookieConsent {
+            1 = show
+        }
+    }
+
+    settings < plugin.tx_gdcookieconsent.settings
+
+}
+
+lib.cookieScripts < lib.cookieConsent
+lib.cookieScripts {
+
+    switchableControllerActions {
+        CookieConsent {
+            1 = script
+        }
+    }
+
+    settings < plugin.tx_gdcookieconsent.settings
+
+}
+
+page.5 < lib.cookieConsent
+page.headerData.5 < lib.cookieScripts

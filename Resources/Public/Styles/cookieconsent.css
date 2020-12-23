@@ -1,0 +1,48 @@
+#gdcc-wrapper #cookieConsent .btn-primary {
+  background-color: #779182;
+  color: white; }
+#gdcc-wrapper #cookieConsent .btn-secondary {
+  background-color: white;
+  color: #779182;
+  border-color: #779182; }
+#gdcc-wrapper #cookieManager .fa-stack {
+  font-size: 28px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 10000; }
+  #gdcc-wrapper #cookieManager .fa-stack.toggle-manager {
+    cursor: pointer; }
+  #gdcc-wrapper #cookieManager .fa-stack .fa-circle {
+    color: #779182; }
+#gdcc-wrapper #cookieManager .card {
+  width: 350px;
+  position: fixed;
+  bottom: 80px;
+  left: 10px;
+  z-index: 15000;
+  display: none; }
+  #gdcc-wrapper #cookieManager .card p {
+    font-size: 16px; }
+  #gdcc-wrapper #cookieManager .card form fieldset a {
+    color: inherit;
+    outline: none; }
+    #gdcc-wrapper #cookieManager .card form fieldset a i {
+      cursor: pointer; }
+
+.gdcc-optout-youtube {
+  height: 100%;
+  width: 100%;
+  background-color: #779182;
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 35px;
+  z-index: 100; }
+
+.gdcc-hide {
+  display: none; }
+
+/*# sourceMappingURL=cookieconsent.css.map */
