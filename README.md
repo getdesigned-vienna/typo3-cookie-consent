@@ -3,7 +3,7 @@
 ## 1 Features
 
 * Easy integrable cookie consent for your TYPO3 installation
-* Configure your cookie settings inside TYPO3 Backend (also possible for editors)
+* Configure your cookie consent settings inside TYPO3 Backend (also possible for editors)
 * Fully customizable due to fluid template engine
 * Takes advantage of [GDCC JS library][1]
 
@@ -45,4 +45,4 @@ TODO
 
 [1]: https://github.com/getdesigned-vienna/cookie-consent
 [2]: https://getcomposer.org/
-[3]: TODO
+[3]: https://extensions.typo3.org/extension/gd_cookieconsent/
