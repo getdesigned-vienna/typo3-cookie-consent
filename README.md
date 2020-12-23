@@ -18,7 +18,7 @@ The recommended way to install the extension is using [Composer][2].
 Run the following command within your Composer based TYPO3 project:
 
 ```
-TODO
+composer require getdesigned/gd-cookieconsent
 ```
 
 #### Installation as extension from TYPO3 Extension Repository (TER)
