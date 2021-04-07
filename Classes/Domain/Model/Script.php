@@ -1,14 +1,15 @@
 <?php
 
-
 namespace GD\Cookieconsent\Domain\Model;
-
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
+/**
+ * Class Script
+ * @since 1.0.0
+ */
 class Script extends AbstractEntity
 {
-
     /**
      * @var string
      */
@@ -113,5 +114,4 @@ class Script extends AbstractEntity
     {
         $this->cookies = $cookies;
     }
-
 }

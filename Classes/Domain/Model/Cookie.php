@@ -4,9 +4,12 @@ namespace GD\Cookieconsent\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
+/**
+ * Class Cookie
+ * @since 1.0.0
+ */
 class Cookie extends AbstractEntity
 {
-
     /**
      * @var string
      */

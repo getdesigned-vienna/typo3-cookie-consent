@@ -2,7 +2,7 @@
 
 $EM_CONF['gd_cookieconsent'] = array(
 	'title' => 'Getdesigned cookie consent',
-	'description' => 'TPO3 Extension for Getdesigned cookie consent (GDCC)',
+	'description' => 'TYPO3 Extension for Getdesigned cookie consent (GDCC)',
 	'author' => 'Stephan',
 	'author_company' => 'Getdesigned',
 	'author_email' => 'sta@getdesigned.at',
