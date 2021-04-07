@@ -3,19 +3,24 @@
 namespace GD\Cookieconsent\Controller;
 
 use GD\Cookieconsent\Domain\Repository\CookiecategoryRepository;
-use GD\Cookieconsent\Domain\Repository\CookieRepository;
 use GD\Cookieconsent\Domain\Repository\ScriptRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
+/**
+ * Class CookieConsentController
+ * @since 1.0.0
+ */
 class CookieConsentController extends ActionController
 {
-
-    /* @var CookiecategoryRepository  */
+    /**
+     * @var CookiecategoryRepository
+     */
     protected $cookiecategoryRepository;
 
-    /* @var ScriptRepository  */
+    /**
+     * @var ScriptRepository
+     */
     protected $scriptRepository;
 
     /**
@@ -38,9 +43,11 @@ class CookieConsentController extends ActionController
         $this->scriptRepository = $scriptRepository;
     }
 
+    /**
+     * Initializes the show action.
+     */
     public function initializeShowAction()
     {
-
         $querySettings = new Typo3QuerySettings();
 
         try {
@@ -52,7 +59,6 @@ class CookieConsentController extends ActionController
         }
 
         $this->cookiecategoryRepository->setDefaultQuerySettings($querySettings);
-
     }
 
     public function showAction()
@@ -60,9 +66,11 @@ class CookieConsentController extends ActionController
         $this->view->assign('cookieCategories', $this->cookiecategoryRepository->findAll());
     }
 
+    /**
+     * Initializes the script action.
+     */
     public function initializeScriptAction()
     {
-
         $querySettings = new Typo3QuerySettings();
 
         try {
@@ -74,12 +82,10 @@ class CookieConsentController extends ActionController
         }
 
         $this->scriptRepository->setDefaultQuerySettings($querySettings);
-
     }
 
     public function scriptAction()
     {
         $this->view->assign('scripts', $this->scriptRepository->findAll());
     }
-
 }

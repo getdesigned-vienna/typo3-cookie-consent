@@ -19,7 +19,6 @@ plugin.tx_gdcookieconsent {
             0 = EXT:news/Resources/Private/Layouts/
             1 = {$plugin.tx_gdcookieconsent.view.layoutRootPath}
         }
-
     }
 }
 
@@ -37,7 +36,6 @@ lib.cookieConsent {
     }
 
     settings < plugin.tx_gdcookieconsent.settings
-
 }
 
 lib.cookieScripts < lib.cookieConsent
@@ -50,7 +48,6 @@ lib.cookieScripts {
     }
 
     settings < plugin.tx_gdcookieconsent.settings
-
 }
 
 page.5 < lib.cookieConsent

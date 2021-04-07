@@ -5,13 +5,9 @@
 >
 
 <f:for as="script" each="{scripts}">
-
     <f:if condition="{script.cookies.0} && {script.script} != ''">
-
         <script data-gdcc-src="{script.script}" data-gdcc-selector="gdcc-optin-{script.cookies.0.identifier}" type="text/plain"></script>
-
     </f:if>
-
 </f:for>
 
 </html>
