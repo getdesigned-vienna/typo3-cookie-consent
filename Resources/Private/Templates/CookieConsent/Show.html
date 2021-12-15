@@ -1,7 +1,7 @@
 <html
-    xmlns="http://www.w3.org/1999/xhtml" lang="en"
-    xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
-    data-namespace-typo3-fluid="true"
+        xmlns="http://www.w3.org/1999/xhtml" lang="en"
+        xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+        data-namespace-typo3-fluid="true"
 >
 
 <div id="gdcc-wrapper">
@@ -34,11 +34,10 @@
                 Cookie-Einstellungen
 
                 <button
-                    data-dismiss="alert"
-                    data-target="#cookieManagerCard"
-                    type="button"
-                    class="close"
-                    aria-label="Schließen"
+                        type="button"
+                        class="close"
+                        aria-label="Schließen"
+                        onclick="$('#cookieManagerCard').hide()"
                 >
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -110,14 +109,14 @@
 
                     </f:for>
 
-                    <input
-                        type="submit"
-                        class="btn btn-primary"
-                        value="Einstellungen speichern"
-                        data-dismiss="alert"
-                        data-target="#cookieManagerCard"
-                        onclick="$('#cookieConsent').modal('hide')"
-                    />
+                    <div class="text-center">
+                        <input
+                                type="submit"
+                                class="btn btn-primary"
+                                value="Einstellungen speichern"
+                                onclick="$('#cookieManagerCard').hide();$('#cookieConsent').modal('hide')"
+                        />
+                    </div>
 
                 </form>
 
