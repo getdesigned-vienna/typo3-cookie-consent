@@ -1,6 +1,7 @@
 .idea
 .Build
 .DS_Store
+/Icon?
 /var
 node_modules
 package-lock.json
