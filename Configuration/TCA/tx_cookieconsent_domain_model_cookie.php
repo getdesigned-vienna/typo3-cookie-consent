@@ -1,5 +1,5 @@
 <?php
-if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+defined('TYPO3_MODE') || defined('TYPO3') || die('Access denied.');
 
 $GLOBALS['TCA']['tx_cookieconsent_domain_model_cookie'] = [
     'ctrl' => [

@@ -12,7 +12,7 @@ $EM_CONF['gd_cookieconsent'] = array(
     'clearCacheOnLoad' => true,
     'constraints' => [
         'depends' => [
-            'typo3' => '9.5.17-10.9.99',
+            'typo3' => '9.5.17-11.5.99',
         ],
         'conflicts' => [],
         'suggests' => [],
