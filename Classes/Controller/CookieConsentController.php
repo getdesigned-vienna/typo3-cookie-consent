@@ -24,6 +24,11 @@ class CookieConsentController extends ActionController
     protected $scriptRepository;
 
     /**
+     * @var Typo3QuerySettings
+     */
+    protected $querySettings;
+
+    /**
      * Inject the cookieCategory repository
      *
      * @param CookiecategoryRepository $cookiecategoryRepository
@@ -44,21 +49,28 @@ class CookieConsentController extends ActionController
     }
 
     /**
+     * @param Typo3QuerySettings $querySettings
+     * @return void
+     */
+    public function injectQuerySettings(Typo3QuerySettings $querySettings)
+    {
+        $this->querySettings = $querySettings;
+    }
+
+    /**
      * Initializes the show action.
      */
     public function initializeShowAction()
     {
-        $querySettings = new Typo3QuerySettings();
-
         try {
-            $querySettings->setStoragePageIds([$this->settings['storagePid']]);
-            $querySettings->setRespectStoragePage(false);
+            $this->querySettings->setStoragePageIds([$this->settings['storagePid']]);
+            $this->querySettings->setRespectStoragePage(false);
         }
         catch (\TypeError $err) {
-            $querySettings->setRespectStoragePage(false);
+            $this->querySettings->setRespectStoragePage(false);
         }
 
-        $this->cookiecategoryRepository->setDefaultQuerySettings($querySettings);
+        $this->cookiecategoryRepository->setDefaultQuerySettings($this->querySettings);
     }
 
     public function showAction()
@@ -71,17 +83,15 @@ class CookieConsentController extends ActionController
      */
     public function initializeScriptAction()
     {
-        $querySettings = new Typo3QuerySettings();
-
         try {
-            $querySettings->setStoragePageIds([$this->settings['storagePid']]);
-            $querySettings->setRespectStoragePage(false);
+            $this->querySettings->setStoragePageIds([$this->settings['storagePid']]);
+            $this->querySettings->setRespectStoragePage(false);
         }
         catch (\TypeError $err) {
-            $querySettings->setRespectStoragePage(false);
+            $this->querySettings->setRespectStoragePage(false);
         }
 
-        $this->scriptRepository->setDefaultQuerySettings($querySettings);
+        $this->scriptRepository->setDefaultQuerySettings($this->querySettings);
     }
 
     public function scriptAction()
